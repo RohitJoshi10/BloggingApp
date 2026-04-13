@@ -1,0 +1,31 @@
+Phase 1: Quick Wins & Optimization (Easy & Fast)
+Inka impact turant dikhega aur code base clean ho jayega.
+
+Priority 1: UserShortDTO (Feature #1): Isse JSON response chota aur professional dikhega. ✅
+
+Priority 2: N+1 Query Handling (Feature #10): Pehle performance monitor karo (Hibernate logs se) aur use fix karo. ✅
+
+Priority 3: Automatic Content-Type & Old File Cleanup (Feature #2 - A & C): Nayi image aate hi purani delete karna aur hardcoding hatana. ✅
+
+Phase 2: Engagement & Social Features (Core Logic)
+Ab hum real "Social Media" vibes layenge.
+4.  Priority 4: Likes Toggle System (Feature #3): @ManyToMany ka practical use. ✅
+5.  Priority 5: Follower System (Feature #4): Isse user network build hona shuru hoga. ✅
+6.  Priority 6: Multi-Media Support (Feature #2 - B & D): Post mein sirf ek photo nahi, balki PDF, Videos aur multiple images ka support. ✅
+
+Phase 3: AI & Communication (The "Cool" Factors)
+Ye wo features hain jo resume par alag chamkenge.
+7.  Priority 7: Gemini AI Integration (Feature #8): Summary generator aur intro writer. Ye tera USP hai, ise pehle karna taaki dikhane mein maza aaye.
+8.  Priority 8: SMTP Email Notifications (Feature #5): Jab koi comment kare toh turant mail jaye. ✅
+
+Phase 4: Money & Security (Finishing Touches)
+Ye thode serious aur tricky features hain.
+9.  Priority 9: Payment Integration - Razorpay (Feature #12): Donation system sabse easy rahega start karne ke liye. ✅
+10. Priority 10: Forget Password (SMS/OTP) (Feature #6): OTP functionality for security. ✅
+11. Priority 11: Redis Caching (Feature #11): Jab data zyada ho jaye, tab speed badhane ke liye. ❌ Too many confusion regarding login
+12. Priority 12: Rate Limiting & Concurrency (Feature #7 & #9): App ko "Hack-proof" aur "Crash-proof" banane ke liye. ✅
+13. Priority 13: Add social login like google, github etc. ✅
+14. Account verification. ❌ Not needed as i want my app to be User Friendly.
+15. When user register or when user is fetched it's list of followers and following should not be in the response for that we can have 2 endpoints. ✅
+16. Update user k req dto mai bhi change krna hai.like password email..puchna pdega gpt se kya hona chaye ye ya ni. ✅
+17. Logout Functionality. ✅

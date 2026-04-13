@@ -1,0 +1,77 @@
+🚀 Updated Final Roadmap
+SMTP (Email): Notifications setup karna.
+
+Forget Password (SMS/OTP): Twilio/Fast2SMS seekhna.
+
+Social Login: Google/Github OAuth 2.0 integration.
+
+Rate Limiting: Security tight karna.
+
+Payment Integration: Razorpay (Donation system).
+
+AI Integration / AI Agents: Blog auto-tagging, content expansion, aur image generation.
+
+Redis Caching: Final performance boost.
+
+
+
+
+
+
+User jb login krega toh usko bas user ko bs list show nhi hogi uske followers and following ki bs count show hoga.
+List dikahne k liye hum 2 naye end points prepare krnege
+
+Bhai, **Account Verification** ka simple matlab hai ye confirm karna ki jo banda register kar raha hai, wo asli hai aur usne jo details (Email ya Phone) di hain, wo usi ki hain.
+
+Abhi tere app mein kya ho raha hai? Koi bhi random email ya phone number daalkar register kar leta hai aur seedha login ho jata hai. **Account Verification** lagane ke baad flow thoda badal jata hai.
+
+---
+
+### 🤨 Iski zaroorat kyun hai?
+1. **Fake Accounts:** Log fake emails se hazaron accounts bana lete hain jo tere database ko bhar denge.
+2. **Security:** Agar kal ko user password bhool jaye (jo hum abhi kar rahe hain), toh hume kaise pata chalega ki ye sahi banda hai? Jab uska number verified hoga, tabhi toh hum use OTP bhej paayenge.
+3. **Data Quality:** Tere paas sirf genuine users ka data rahega.
+
+---
+
+### 🛠️ Ye kaam kaise karta hai? (The Logic)
+
+Verification do tarike se hoti hai jo tune abhi seekhi hain:
+
+1. **OTP via SMS (Fast2SMS):** Register karte hi user ko SMS jayega. Jab tak wo OTP nahi daalega, uska account "Inactive" rahega.
+2. **Verification Link via Email (SMTP):** Register karte hi ek link jayega (e.g., `api/v1/auth/verify?token=abc`). Link pe click karte hi account active ho jayega.
+
+
+
+
+---
+
+### 💻 Tere Code mein kya badlav (Changes) honge?
+
+Agar tu ye implement karna chahta hai, toh ye 3 bade steps honge:
+
+**1. Entity mein naya Column:**
+`User` entity mein ek boolean field aayegi:
+```java
+private boolean isEnabled = false; // Default false rahega
+```
+
+**2. Registration Logic Update:**
+`registerNewUser` mein ab hum user ko `save` toh karenge, par sath mein ek OTP/Token bhi bhejenge aur account ko `enabled = false` rakhenge.
+
+**3. Login Logic Update:**
+Jab user login karne ki koshish karega, toh hum check karenge:
+* Agar `isEnabled == true` -> Login successful.
+* Agar `isEnabled == false` -> Error denge: *"Bhai, pehle account verify karle!"*
+
+---
+
+### 🔥 Mera Suggestion
+
+Bhai, tune abhi **Forgot Password** ka logic likha hai. Account verification ke liye bhi **vahi same logic** use hota hai (OTP generate karna, save karna, aur verify karna).
+
+**Tu abhi kya karna chahta hai?**
+1. Pehle **Forgot Password** ko Postman se fully test karke khatam karein?
+2. Ya fir registration ke sath hi **Mobile Verification** shuru karein?
+
+**Bhai, agar tu account verification shuru karna chahta hai, toh bata, main tujhe `isEnabled` wala logic samjhata hoon!**

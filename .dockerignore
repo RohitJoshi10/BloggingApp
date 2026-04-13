@@ -1,0 +1,27 @@
+# Ignore build artifacts (Local build ka kachra)
+target/
+*.jar
+*.war
+
+# Ignore Git files
+.git
+.gitignore
+
+# Ignore IDE settings
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# Ignore Docker files themselves
+Dockerfile
+.dockerignore
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore logs
+*.log
