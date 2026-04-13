@@ -21,8 +21,6 @@ import java.util.List;
 
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = "com.BloggingApp.BloggingApp.repositories")
-// Isse Redis repositories ki scanning bypass ho jayegi
-@EnableRedisRepositories(includeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {}))
 @EnableAsync
 public class BloggingAppApplication implements CommandLineRunner {
 
