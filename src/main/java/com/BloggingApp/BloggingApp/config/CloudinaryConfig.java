@@ -26,6 +26,11 @@ public class CloudinaryConfig {
         config.put("cloud_name", cloudName);
         config.put("api_key", apiKey);
         config.put("api_secret", apiSecret);
+
+        // 🔥 Railway connectivity issues ke liye ye mandatory hai
+        config.put("connection_timeout", "20000");
+        config.put("read_timeout", "20000");
+
         return new Cloudinary(config);
     }
 }

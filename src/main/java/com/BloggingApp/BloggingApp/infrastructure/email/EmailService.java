@@ -26,14 +26,16 @@ public class EmailService {
             MimeMessage mimeMessage = javaMailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, "utf-8");
 
-            helper.setText(htmlBody, true); // 'true' ka matlab hai ki ye HTML hai
+            helper.setText(htmlBody, true);
             helper.setTo(to);
             helper.setSubject(subject);
-            helper.setFrom("Blogging App " + " <" + senderEmail + ">");
+            helper.setFrom("Blogging App <" + senderEmail + ">");
 
             javaMailSender.send(mimeMessage);
-        } catch (MessagingException e) {
-            throw new IllegalStateException("Failed to send email");
+            System.out.println("✅ Email sent successfully to: " + to);
+        } catch (Exception e) {
+            // 🔥 Exception throw mat karo, bas log kar do
+            System.err.println("❌ Failed to send email to " + to + ": " + e.getMessage());
         }
     }
 
