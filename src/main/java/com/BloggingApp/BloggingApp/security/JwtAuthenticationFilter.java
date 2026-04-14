@@ -29,11 +29,14 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
-        // Agar request webhook par ja rahi hai, toh filter bypass kar do
-        if (request.getServletPath().contains("/api/v1/payments/webhook")) {
+        String path = request.getServletPath();
+
+        // 🔥 In paths par filter ko bilkul mat chalao
+        if (path.contains("/api/v1/auth/") || path.contains("/api/v1/payments/webhook")) {
             filterChain.doFilter(request, response);
             return;
         }
+
 
         // 1. Get Token from the Request: Token comes in Header
         String requestToken = request.getHeader("Authorization");

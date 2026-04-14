@@ -41,7 +41,6 @@ public class SecurityConfig {
                         // 1. Webhook ko sabse upar rakho (Public Access)
                         .requestMatchers("/api/v1/payments/webhook").permitAll()
                         .requestMatchers("/api/v1/payments/success").permitAll()
-                        .requestMatchers("/api/v1/payments/success").permitAll()
 
                         // 2. Auth endpoints (Login/Register)
                         .requestMatchers("/api/v1/auth/**").permitAll()
