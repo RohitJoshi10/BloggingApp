@@ -18,6 +18,9 @@ public class EmailService {
     @Value("${spring.mail.username}")
     private String senderEmail;
 
+    @Value("${app.base.url}")
+    private String appBaseUrl;
+
     private final JavaMailSender javaMailSender;
 
     @Async
@@ -70,46 +73,87 @@ public class EmailService {
         sendHtmlEmail(ownerEmail, subject, htmlBody);
     }
 
-
     public void sendWelcomeEmail(String userEmail, String userName) {
-        // Subject mein bhi %s format use karne ke liye String.format lagana padega
+        // Dynamic link generate karna (localhost ho ya production, dono chalenge)
+        String writeLink = String.format("%s/write", appBaseUrl);
         String subject = String.format("Welcome to the Community, %s! 🚀", userName);
 
         String htmlBody = """
-        <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 20px auto; border: 1px solid #eee; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
-            <div style="background: linear-gradient(135deg, #6c63ff 0%%, #3f3d56 100%%); padding: 40px; text-align: center;">
-                <h1 style="color: white; margin: 0; font-size: 28px; letter-spacing: 1px;">Welcome to Blogging App!</h1>
-                <p style="color: #e0e0e0; margin-top: 10px;">Where your stories find a home.</p>
-            </div>
-            
-            <div style="padding: 40px; line-height: 1.8; color: #444; background-color: #ffffff;">
-                <p style="font-size: 18px; margin-bottom: 20px;">Hi <b>%s</b>,</p>
-                <p>We are absolutely thrilled to have you join our creative community! Whether you're here to share your tech journey, write poetry, or post your latest trekking adventures, you're in the right place.</p>
-                
-                <div style="background-color: #f4f7ff; padding: 25px; border-radius: 10px; margin: 30px 0; text-align: center; border: 1px dashed #6c63ff;">
-                    <h3 style="margin: 0; color: #6c63ff;">Ready to write your first post?</h3>
-                    <p style="font-size: 14px; color: #666; margin: 10px 0 20px 0;">Don't keep your ideas waiting. Share them with the world!</p>
-                    <a href="http://localhost:3000/write" style="background-color: #6c63ff; color: white; padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);">Start Blogging Now</a>
-                </div>
-                
-                <p>If you have any questions, just hit reply. We're always here to help.</p>
-                
-                <p style="margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px;">
-                    Happy Writing,<br>
-                    <span style="color: #6c63ff; font-weight: bold; font-size: 18px;">Rohit Joshi</span><br>
-                    <small style="color: #888;">Founder, Blogging App Team</small>
-                </p>
-            </div>
-            
-            <div style="background-color: #f9f9f9; padding: 20px; text-align: center; font-size: 12px; color: #aaa;">
-                <p>You received this email because you signed up for Blogging App.<br>
-                © 2026 Blogging App. All rights reserved.</p>
-            </div>
+    <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 20px auto; border: 1px solid #eee; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+        <div style="background: linear-gradient(135deg, #6c63ff 0%%, #3f3d56 100%%); padding: 40px; text-align: center;">
+            <h1 style="color: white; margin: 0; font-size: 28px; letter-spacing: 1px;">Welcome to Blogging App!</h1>
+            <p style="color: #e0e0e0; margin-top: 10px;">Where your stories find a home.</p>
         </div>
-        """.formatted(userName); // Sirf userName chahiye yahan
+        
+        <div style="padding: 40px; line-height: 1.8; color: #444; background-color: #ffffff;">
+            <p style="font-size: 18px; margin-bottom: 20px;">Hi <b>%s</b>,</p>
+            <p>We are absolutely thrilled to have you join our creative community! Whether you're here to share your tech journey, write poetry, or post your latest trekking adventures, you're in the right place.</p>
+            
+            <div style="background-color: #f4f7ff; padding: 25px; border-radius: 10px; margin: 30px 0; text-align: center; border: 1px dashed #6c63ff;">
+                <h3 style="margin: 0; color: #6c63ff;">Ready to write your first post?</h3>
+                <p style="font-size: 14px; color: #666; margin: 10px 0 20px 0;">Don't keep your ideas waiting. Share them with the world!</p>
+                <a href="%s" style="background-color: #6c63ff; color: white; padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);">Start Blogging Now</a>
+            </div>
+            
+            <p>If you have any questions, just hit reply. We're always here to help.</p>
+            
+            <p style="margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px;">
+                Happy Writing,<br>
+                <span style="color: #6c63ff; font-weight: bold; font-size: 18px;">Rohit Joshi</span><br>
+                <small style="color: #888;">Founder, Blogging App Team</small>
+            </p>
+        </div>
+        
+        <div style="background-color: #f9f9f9; padding: 20px; text-align: center; font-size: 12px; color: #aaa;">
+            <p>You received this email because you signed up for Blogging App.<br>
+            © 2026 Blogging App. All rights reserved.</p>
+        </div>
+    </div>
+    """.formatted(userName, writeLink); // Do variables pass kiye hain order mein
 
         sendHtmlEmail(userEmail, subject, htmlBody);
     }
+
+
+//    public void sendWelcomeEmail(String userEmail, String userName) {
+//        // Subject mein bhi %s format use karne ke liye String.format lagana padega
+//        String subject = String.format("Welcome to the Community, %s! 🚀", userName);
+//
+//        String htmlBody = """
+//        <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 20px auto; border: 1px solid #eee; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+//            <div style="background: linear-gradient(135deg, #6c63ff 0%%, #3f3d56 100%%); padding: 40px; text-align: center;">
+//                <h1 style="color: white; margin: 0; font-size: 28px; letter-spacing: 1px;">Welcome to Blogging App!</h1>
+//                <p style="color: #e0e0e0; margin-top: 10px;">Where your stories find a home.</p>
+//            </div>
+//
+//            <div style="padding: 40px; line-height: 1.8; color: #444; background-color: #ffffff;">
+//                <p style="font-size: 18px; margin-bottom: 20px;">Hi <b>%s</b>,</p>
+//                <p>We are absolutely thrilled to have you join our creative community! Whether you're here to share your tech journey, write poetry, or post your latest trekking adventures, you're in the right place.</p>
+//
+//                <div style="background-color: #f4f7ff; padding: 25px; border-radius: 10px; margin: 30px 0; text-align: center; border: 1px dashed #6c63ff;">
+//                    <h3 style="margin: 0; color: #6c63ff;">Ready to write your first post?</h3>
+//                    <p style="font-size: 14px; color: #666; margin: 10px 0 20px 0;">Don't keep your ideas waiting. Share them with the world!</p>
+//                    <a href="http://localhost:3000/write" style="background-color: #6c63ff; color: white; padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);">Start Blogging Now</a>
+//                </div>
+//
+//                <p>If you have any questions, just hit reply. We're always here to help.</p>
+//
+//                <p style="margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px;">
+//                    Happy Writing,<br>
+//                    <span style="color: #6c63ff; font-weight: bold; font-size: 18px;">Rohit Joshi</span><br>
+//                    <small style="color: #888;">Founder, Blogging App Team</small>
+//                </p>
+//            </div>
+//
+//            <div style="background-color: #f9f9f9; padding: 20px; text-align: center; font-size: 12px; color: #aaa;">
+//                <p>You received this email because you signed up for Blogging App.<br>
+//                © 2026 Blogging App. All rights reserved.</p>
+//            </div>
+//        </div>
+//        """.formatted(userName); // Sirf userName chahiye yahan
+//
+//        sendHtmlEmail(userEmail, subject, htmlBody);
+//    }
 
 //    @Async
 //    public void sendEmail(String to, String subject, String body){
