@@ -25,6 +25,9 @@ public class StripeService {
     @Value("${stripe.api.key}")
     private String stripeSecretKey;
 
+    @Value("${app.base-url}")
+    private String baseUrl;
+
     @PostConstruct
     public void inti(){
         // Stripe ko apni secret key se initialize kro
@@ -102,7 +105,8 @@ public class StripeService {
         SessionCreateParams params = SessionCreateParams.builder()
                 .setMode(SessionCreateParams.Mode.PAYMENT)
                 // StripeService.java mein createCheckoutSession method ke andar
-                .setSuccessUrl("http://localhost:8080/api/v1/payments/success?session_id={CHECKOUT_SESSION_ID}")
+                .setSuccessUrl(baseUrl + "/api/v1/payments/success?session_id={CHECKOUT_SESSION_ID}")
+                //.setSuccessUrl("http://localhost:8080/api/v1/payments/success?session_id={CHECKOUT_SESSION_ID}")
                 //.setSuccessUrl("https://www.google.com") // Yahan apna success page dalna
                 .setCancelUrl("https://www.google.com")
                 // 🔥 Automatic Invoice Enable
