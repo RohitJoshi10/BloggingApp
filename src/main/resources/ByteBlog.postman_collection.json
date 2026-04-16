@@ -1,0 +1,1666 @@
+{
+  "info": {
+    "_postman_id": "cfa45c6c-906c-4f57-b1ba-db022df416ec",
+    "name": "ByteBlog",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "22747910"
+  },
+  "item": [
+    {
+      "name": "UserCollection",
+      "item": [
+        {
+          "name": "promoteToAdmin",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/users/{userId}/assign-admin",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "users",
+                "{userId}",
+                "assign-admin"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb2hpdDExam9zaGkxMEBnbWFpbC5jb20iLCJpYXQiOjE3NzU5ODA4MDcsImV4cCI6MTc3NTk5ODgwN30.6EWsB9tB0Qw5QcmUT-Maw0BrbRz8kEPHsulvQGvYqOMcUKCytEr1Xmy4oeFEjhEnYVrwK1E-g-22Pacfuhpj-Q",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Rohit Joshi\",\r\n    \"phoneNumber\": \"9758238757\",\r\n    \"about\": \"Hey! I am a Blogger🧑‍💻\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/users/10",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "users",
+                "10"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Fetch User",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYWNoaW5AZ21haWwuY29tIiwiaWF0IjoxNzc2MzczMTQxLCJleHAiOjE3NzYzOTExNDF9.u2jpPaeY-vxnDyH7RdNeRcbpcqjMFXU40zHm3EDnu3tOFPApgkZkwZckPM-ZUsomWIinv7O8sC39ASfTOrlaXA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/users/17",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "users",
+                "17"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Fetch All User",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NzQ3MzEzOTksImV4cCI6MTc3NDc0OTM5OX0.xKxN3LzYxT9sJJxJ5VaiawXSmNa89mach9HMvT11aMCRu6RXs50QkMp_jRfvTsbsaYyVo95lC6EOxhUR4NEX-A",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/users/getAllUser",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "users",
+                "getAllUser"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYWNoaW5AZ21haWwuY29tIiwiaWF0IjoxNzczNjgxMTQ3LCJleHAiOjE3NzM2OTkxNDd9.JWyieLp3VLlpqi1u9EFl-cyWRK0p45NH_MlljOLz8o4qv0OWgKn-RZ7FyawXtWvagUjBZFcTNUQ0PmKKq93a7Q",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/users/1",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "users",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Follow_UnFollow",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYWNoaW5AZ21haWwuY29tIiwiaWF0IjoxNzc2MzczMTQxLCJleHAiOjE3NzYzOTExNDF9.u2jpPaeY-vxnDyH7RdNeRcbpcqjMFXU40zHm3EDnu3tOFPApgkZkwZckPM-ZUsomWIinv7O8sC39ASfTOrlaXA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/users/follow/16",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "users",
+                "follow",
+                "16"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SeeMyFollowers",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmtpdEBnbWFpbC5jb20iLCJpYXQiOjE3NzQ3ODY4NTYsImV4cCI6MTc3NDgwNDg1Nn0.bcJ0gOs62GMMJ8i_fl3wJLPJFGSfv2p4TMVrMfTa9Z8ZYSm_-h1EXiSOpm2FcyZBDALRnUeePkFXgzes4SUA7w",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/users/2/followers",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "users",
+                "2",
+                "followers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SeeMyFollowing Copy",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmtpdEBnbWFpbC5jb20iLCJpYXQiOjE3NzQ3ODY4NTYsImV4cCI6MTc3NDgwNDg1Nn0.bcJ0gOs62GMMJ8i_fl3wJLPJFGSfv2p4TMVrMfTa9Z8ZYSm_-h1EXiSOpm2FcyZBDALRnUeePkFXgzes4SUA7w",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/users/2/following",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "users",
+                "2",
+                "following"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Set-Password",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb2hpdDExam9zaGkxMEBnbWFpbC5jb20iLCJpYXQiOjE3NzYyNzczNzEsImV4cCI6MTc3NjI5NTM3MX0.4B2V2JEu1jRfijNafFSroxwc8Mts3mc5XWcOQJU1HSHgDzDA-asWlEwWE7CjjHlzq49hP_JU4dtuOm9TU--ADQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"password\": \"Password@12345\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/users/profile/set-password",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "users",
+                "profile",
+                "set-password"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "CategoryCollection",
+      "item": [
+        {
+          "name": "Create Category",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NzYzNzE2MzMsImV4cCI6MTc3NjM4OTYzM30.itHkEXv_f-3DEc80LRcXJEBA-PyZr8E0ULBH8TmmkpW3PefTvwY4Ngc1htietNBKYoPS_qxlmXcCWPdRac_ZKg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"categoryTitle\": \"Python Programming\",\r\n    \"categoryDescription\": \"This category includes tutorials on Pytho and Flask/Danjo Programming\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/categories/",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "categories",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Category",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NzYzNzE2MzMsImV4cCI6MTc3NjM4OTYzM30.itHkEXv_f-3DEc80LRcXJEBA-PyZr8E0ULBH8TmmkpW3PefTvwY4Ngc1htietNBKYoPS_qxlmXcCWPdRac_ZKg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"categoryTitle\": \"C++ Programming.\",\r\n    \"categoryDescription\": \"This category includes tutorials on C++ and STL.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/categories/3",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "categories",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Category By Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/categories/1",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "categories",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Categories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/categories/getCategories",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "categories",
+                "getCategories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Category",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/categories/1",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "categories",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "PostCollection",
+      "item": [
+        {
+          "name": "Create Post",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYWNoaW5AZ21haWwuY29tIiwiaWF0IjoxNzc2MzczMjYxLCJleHAiOjE3NzYzOTEyNjF9.AE7LN3h2JvcY1qI5NvE51D0nC6clXRGmQV2Wg75Y9pzaBt7EeTu88j4pPBHfqEKQBtldvKHdmcGe8vILWJKnuQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Java\",\r\n    \"content\": \"Java k bina future ni hai bhai tera😂😂😂\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/user/17/category/2/posts",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "user",
+                "17",
+                "category",
+                "2",
+                "posts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Post By User",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/user/10/posts?pageNumber=0&pageSize=5&sortBy=title&sortDir=asc",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "user",
+                "10",
+                "posts"
+              ],
+              "query": [
+                {
+                  "key": "pageNumber",
+                  "value": "0"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "5"
+                },
+                {
+                  "key": "sortBy",
+                  "value": "title"
+                },
+                {
+                  "key": "sortDir",
+                  "value": "asc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Post By Category",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/category/1/posts?pageNumber=0&pageSize=5&sortBy=title&sortDir=asc",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "category",
+                "1",
+                "posts"
+              ],
+              "query": [
+                {
+                  "key": "pageNumber",
+                  "value": "0"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "5"
+                },
+                {
+                  "key": "sortBy",
+                  "value": "title"
+                },
+                {
+                  "key": "sortDir",
+                  "value": "asc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Post By Id",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/posts/2",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "posts",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Posts",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "",
+                  "var template = `",
+                  "<canvas id=\"commentsChart\" height=\"100\"></canvas>",
+                  "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js\"></script>",
+                  "<script>",
+                  "    var ctx = document.getElementById(\"commentsChart\");",
+                  "    var myChart = new Chart(ctx, {",
+                  "        type: \"bar\",",
+                  "        data: {",
+                  "            labels: [],",
+                  "            datasets: [{",
+                  "                label: \"Number of Comments\",",
+                  "                data: [],",
+                  "                backgroundColor: \"rgba(54, 162, 235, 0.6)\",",
+                  "                borderColor: \"rgba(54, 162, 235, 1)\",",
+                  "                borderWidth: 1",
+                  "            }]",
+                  "        },",
+                  "        options: {",
+                  "            legend: { display: true },",
+                  "            title: {",
+                  "                display: true,",
+                  "                text: \"Comments per Blog Post\"",
+                  "            },",
+                  "            scales: {",
+                  "                xAxes: [{",
+                  "                    display: true,",
+                  "                    scaleLabel: {",
+                  "                        display: true,",
+                  "                        labelString: \"Post Title\"",
+                  "                    },",
+                  "                    ticks: {",
+                  "                        autoSkip: false",
+                  "                    }",
+                  "                }],",
+                  "                yAxes: [{",
+                  "                    display: true,",
+                  "                    scaleLabel: {",
+                  "                        display: true,",
+                  "                        labelString: \"Comment Count\"",
+                  "                    },",
+                  "                    ticks: {",
+                  "                        beginAtZero: true,",
+                  "                        stepSize: 1",
+                  "                    }",
+                  "                }]",
+                  "            }",
+                  "        }",
+                  "    });",
+                  "",
+                  "    pm.getData(function (err, value) {",
+                  "        myChart.data.labels = value.posts.map(function(post) { return post.title; });",
+                  "        myChart.data.datasets[0].data = value.posts.map(function(post) { return post.commentCount; });",
+                  "        myChart.update();",
+                  "    });",
+                  "</script>",
+                  "`;",
+                  "",
+                  "function constructVisualizerPayload() {",
+                  "    var jsonData = pm.response.json();",
+                  "    var posts = jsonData.content.map(function(post) {",
+                  "        return {",
+                  "            title: post.title,",
+                  "            commentCount: post.comments ? post.comments.length : 0",
+                  "        };",
+                  "    });",
+                  "    return { posts: posts };",
+                  "}",
+                  "",
+                  "pm.visualizer.set(template, constructVisualizerPayload());",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/posts?pageNumber=0&pageSize=5&sortBy=title&sortDir=asc",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "posts"
+              ],
+              "query": [
+                {
+                  "key": "pageNumber",
+                  "value": "0"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "5"
+                },
+                {
+                  "key": "sortBy",
+                  "value": "title"
+                },
+                {
+                  "key": "sortDir",
+                  "value": "asc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Post",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYWNoaW5AZ21haWwuY29tIiwiaWF0IjoxNzc0MTg2NDAxLCJleHAiOjE3NzQyMDQ0MDF9.ccU9AiNXTbbcSUBOYh2onWe2bMmkODuqj47-IJt9MdviZAfMXJ96MSkE66YkXhZEmXZLe6qJpO0jSMM9TMEc3Q",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/posts/6",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "posts",
+                "6"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Post",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmtpdEBnbWFpbC5jb20iLCJpYXQiOjE3NzM3NzIyMjUsImV4cCI6MTc3Mzc5MDIyNX0.qEC7WmkeRgT9AyJG40bWnPchi3Hu8feKKMjfSE4mUhtw7-AUOH4kthApRhlM-sZJp_B79g5Od7Q2yj2HknSqFQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Spring Boot Microservices\",\r\n    \"content\": \"We will explore the world of microservices using Spring Cloud and Docker.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/posts/3",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "posts",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Move Post To New Category",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/posts/3/category/2",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "posts",
+                "3",
+                "category",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search By Keyword",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/posts/search/j?pageNumber=0&pageSize=5&sortDir=asc",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "posts",
+                "search",
+                "j"
+              ],
+              "query": [
+                {
+                  "key": "pageNumber",
+                  "value": "0"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "5"
+                },
+                {
+                  "key": "sortDir",
+                  "value": "asc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Upload File/Image/Video/gif",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYWNoaW5AZ21haWwuY29tIiwiaWF0IjoxNzc0MjA3OTc5LCJleHAiOjE3NzQyMjU5Nzl9.Uq6zCpJ7zF3_oiXWBnIuzPG3_VlMZthEgNzkTLGwAA0UHd1JrFMnELzQEDAuvTz4KoII0fC03bekhtW5-4E-pA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "media",
+                  "description": "This is video",
+                  "type": "file",
+                  "uuid": "5712e5bb-3c8a-4131-bfbc-0098ddba57c1",
+                  "src": [
+                    "/C:/Users/user/Downloads/PolicyBazaar Health Insurance_ Cover Rs.5 Lac @ Rs12.9_Day.pdf",
+                    "/C:/Users/user/Downloads/Venice_5.mp4",
+                    "/C:/Users/user/Downloads/post_6.png"
+                  ]
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/post/media/upload/7",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "post",
+                "media",
+                "upload",
+                "7"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Download_Media",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/post/media/download/5",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "post",
+                "media",
+                "download",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Like_Unlike_Post",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYWNoaW5AZ21haWwuY29tIiwiaWF0IjoxNzc2MzcyNjcyLCJleHAiOjE3NzYzOTA2NzJ9.zu1n4leGzfLFCaPaHmQ3bxw2-AItv5FHW29fdpV29AaEieA0JRP8v6k62Y_XogEnkiplYbD5mqRjSILstgUqbQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/post/2/like/17",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "post",
+                "2",
+                "like",
+                "17"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "CommentCollection",
+      "item": [
+        {
+          "name": "Create Comment",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYWNoaW5AZ21haWwuY29tIiwiaWF0IjoxNzc2MzcyNjcyLCJleHAiOjE3NzYzOTA2NzJ9.zu1n4leGzfLFCaPaHmQ3bxw2-AItv5FHW29fdpV29AaEieA0JRP8v6k62Y_XogEnkiplYbD5mqRjSILstgUqbQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"content\" : \"Microservices toh theek hai, par kya main ek hi DB use kar sakta hoon saari services ke liye? Kaun mehnat kare alag-alag manage karne ki.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/post/2/user/17/comment",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "post",
+                "2",
+                "user",
+                "17",
+                "comment"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Comment",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYWNoaW5AZ21haWwuY29tIiwiaWF0IjoxNzczNzcyNzE0LCJleHAiOjE3NzM3OTA3MTR9.JLi3MDL-vmv-L6j9772GfZMp5c2mHKHrAhkeTPnVoW_p_diHkqQC9EV5iSMvHHfOww2hB7TyXaRqFwThLtIvQw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"content\" : \"Bhai kya mst blog likha hai Spring Boot Microservices Guide 🤗🤗🤗🤗\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/comment/1",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "comment",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Comment By User",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/comment/3",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "comment",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Comment",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmtpdEBnbWFpbC5jb20iLCJpYXQiOjE3NzM3NzYwMTMsImV4cCI6MTc3Mzc5NDAxM30.l5ATlAVPw54H9n6cP8LlFtHUSMhMAu6hIVAj160jsFbQbWxSERBb_w6dRMcmU5g8Z87UaQoEOR0m3JQjq0Txbw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/comment/1",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "comment",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Login / Signup",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\" : \"rohit11joshi10@gmail.com\",\r\n    \"password\" : \"Password@1234\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/v1/auth/login",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Sachin Aswal\",\r\n    \"email\": \"sachin@gmail.com\",\r\n    \"password\": \"Password@1234\",\r\n    \"about\": \"I am a Software Engineer🧑‍🔬\",\r\n    \"phoneNumber\": \"987654321\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/v1/auth/register",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ForgetPassword",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/v1/auth/forgot-password?phoneNumber=9758238757",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "forgot-password"
+              ],
+              "query": [
+                {
+                  "key": "phoneNumber",
+                  "value": "9758238757"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Verify_OTP",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \r\n    \"phoneNumber\": \"9758238757\", \r\n    \"otp\": \"959908\", \r\n    \"newPassword\": \"Password@1234\" \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/v1/auth/verify-otp",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "verify-otp"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GoogleLogin",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://byteblog.up.railway.app/oauth2/authorization/google",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "oauth2",
+                "authorization",
+                "google"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "LogOut",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYWNoaW5AZ21haWwuY29tIiwiaWF0IjoxNzc2MzczMjYxLCJleHAiOjE3NzYzOTEyNjF9.AE7LN3h2JvcY1qI5NvE51D0nC6clXRGmQV2Wg75Y9pzaBt7EeTu88j4pPBHfqEKQBtldvKHdmcGe8vILWJKnuQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/v1/auth/logout",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "PostMediaCollection",
+      "item": [
+        {
+          "name": "Download_Media",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/media/download/{mediaId}",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "media",
+                "download",
+                "{mediaId}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "UploadMedai(Image,Video,GIF)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb2hpdDExam9zaGkxMEBnbWFpbC5jb20iLCJpYXQiOjE3NzYzNzIwNjEsImV4cCI6MTc3NjM5MDA2MX0.YBrpC0xiEYmxKzR81jAhGVsmEr4-8prhhL227DPooIAd6SAzWKpUdhxHL_x9zwuFKitRasqvVAI1ijlxLUFwXA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "media",
+                  "description": "Post-1 Media",
+                  "type": "file",
+                  "uuid": "c75d7beb-0d15-496e-8806-0f5135fec543",
+                  "src": "/C:/Users/user/Downloads/comment_8626651.png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/media/upload/2",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "media",
+                "upload",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "UpdateMedia",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYWNoaW5AZ21haWwuY29tIiwiaWF0IjoxNzc0MjY0NzQzLCJleHAiOjE3NzQyODI3NDN9.rfJmp6g3UFg8P8XFIHOKUKZ-3B7pONWPhM3C7temHnBkw3I_bFsEDIyS_MZEUK7qyCVRF-i73qmbyddjOMcW2A",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "media",
+                  "type": "file",
+                  "uuid": "4cde4784-2a62-4985-8df9-123d2d7088d1",
+                  "src": "/C:/Users/user/Downloads/post_6.png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/media/update/3",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "media",
+                "update",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DeleteMedia",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYWNoaW5AZ21haWwuY29tIiwiaWF0IjoxNzc0MjkwMTUzLCJleHAiOjE3NzQzMDgxNTN9.PuOM5bV6Vv2I5hKlmG3Pp2OqBMTv_4K0Sb-Jlab44hz7LCskiBN42I3XJ_1TjEDZYhOHwbJJGAbA-VV0T4jhZA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/media/delete/7",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "media",
+                "delete",
+                "7"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "StripePayment",
+      "item": [
+        {
+          "name": "Make Payemnt",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NzYxNTM2NjAsImV4cCI6MTc3NjE3MTY2MH0.VdZ-EWbrycPme1VJfKPbcBLasS-qzKthTqZ8ZIiB7C4qgviIeyheCIO6umBpmhDDDKiFWN3mMFWrX9-FS17EGA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/v1/payments/create-intent?amount=499",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "payments",
+                "create-intent"
+              ],
+              "query": [
+                {
+                  "key": "amount",
+                  "value": "499"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Confirm Payment",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmtpdEBnbWFpbC5jb20iLCJpYXQiOjE3NzQ5NzU5MzYsImV4cCI6MTc3NDk5MzkzNn0.NyKzxU9usjtwxrWbPWvbiaggOC8-vxxQRIsyRaDVvhiu0vUl_kOCv0C7nydM2OUA151DxEKnDdo8NVwKS3HSQw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/v1/payments/confirm/pi_3TH5ZhKQir8FKbvs1Hj9a3L2",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "payments",
+                "confirm",
+                "pi_3TH5ZhKQir8FKbvs1Hj9a3L2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create_Checkout_Session",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb2hpdDExam9zaGkxMEBnbWFpbC5jb20iLCJpYXQiOjE3NzYzNzMzNzEsImV4cCI6MTc3NjM5MTM3MX0.9E_wnXClvzAQBJypwTSjZQqCNml59gR6vCXsM7uCIoPjxAHYNzEJovxDqHaMoPF13iff8JMPhjo97nkhAUS5UQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "https://byteblog.up.railway.app/api/v1/payments/create-checkout-session?amount=1000",
+              "protocol": "https",
+              "host": [
+                "byteblog",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "payments",
+                "create-checkout-session"
+              ],
+              "query": [
+                {
+                  "key": "amount",
+                  "value": "1000"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
