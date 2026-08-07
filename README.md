@@ -507,7 +507,7 @@ Content-Type: application/json
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/RohitJoshi10/BloggingApp.git
+git clone https://github.com/RohitJoshi10/Byte-Blog.git
 cd BloggingApp
 ```
 
